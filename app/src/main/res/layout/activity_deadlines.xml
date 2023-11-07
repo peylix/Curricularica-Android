@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Title for Exams -->
+    <TextView
+        android:id="@+id/textViewExamsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Exams"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- List for Exams -->
+    <ListView
+        android:id="@+id/listViewExams"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"/>
+
+    <!-- Spacing between two Lists -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="16dp"/>
+
+    <!-- Title for Assignments -->
+    <TextView
+        android:id="@+id/textViewAssignmentsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Assignments"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- List for Assignments -->
+    <ListView
+        android:id="@+id/listViewAssignments"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"/>
+
+</LinearLayout>
