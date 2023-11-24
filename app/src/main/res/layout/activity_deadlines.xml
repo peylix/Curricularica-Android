@@ -16,7 +16,7 @@
 
     <!-- Title for Exams -->
     <TextView
-        android:id="@+id/textViewExamsTitle"
+        android:id="@+id/exam_list_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Exams"
@@ -27,7 +27,7 @@
 
     <!-- List for Exams -->
     <ListView
-        android:id="@+id/listViewExams"
+        android:id="@+id/list_exams"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -42,7 +42,7 @@
 
     <!-- Title for Assignments -->
     <TextView
-        android:id="@+id/textViewAssignmentsTitle"
+        android:id="@+id/assignment_list_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Assignments"
@@ -53,7 +53,7 @@
 
     <!-- List for Assignments -->
     <ListView
-        android:id="@+id/listViewAssignments"
+        android:id="@+id/list_assignments"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

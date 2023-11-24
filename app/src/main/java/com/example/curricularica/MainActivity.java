@@ -43,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             } else if (item.getItemId() == R.id.deadlines) {
                 Intent deadlinesIntent = new Intent(this, DeadlinesActivity.class);
+                deadlinesIntent.putExtra("TIMETABLE_LIST", (Serializable) courseModels);
+                deadlinesIntent.putExtra("TIMETABLE_LIST_2", (Serializable) courseModels);
+
                 startActivity(deadlinesIntent);
                 return true;
             }
@@ -105,31 +108,31 @@ public class MainActivity extends AppCompatActivity {
 
     private void addList() {
         courseModels.add(new CourseModel(0, "COMP3017J", 3, 4, 1, "9:55", "11:30", "Software Methodology",
-                "Qing Mi", "4-414", "1-16"));
+                "Qing Mi", "4-414", "1-16", "COMP3017J Final Exam", "2023-12-25", "Location: TB4-201", "Technical Interview Project", "2023-12-15", "Should submit a docker image."));
         courseModels.add(new CourseModel(1, "COMP3011J", 5, 6, 1, "13:30", "15:05", "Mobile Computing",
-                "Mohamed Saadeldin", "4-414", "1-15"));
+                "Mohamed Saadeldin", "4-414", "1-15", "", "", "", "Final Submission", "2023-12-21", "Go to CS Moodle for more details."));
 
         courseModels.add(new CourseModel(2, "COMP3033J", 3, 4, 2, "9:55", "11:30", "Computer Graphics",
-                "Mohamed Saadeldin", "4-214", "1-15"));
+                "Mohamed Saadeldin", "4-214", "1-15", "COMP3033J Final Exam", "2023-12-25", "Location: TB4-201", "Technical Interview Project", "2023-12-15", "Should submit a docker image."));
         courseModels.add(new CourseModel(3, "COMP3019J", 5, 6, 2, "13:30", "15:05", "Web App Dev",
-                "Aiden Murphy", "3-324", "1-15"));
+                "Aiden Murphy", "3-324", "1-15", "", "", "", "Project Milestone 2", "2023-12-10", "Go to CS Moodle for more details."));
 
         courseModels.add(new CourseModel(4, "COMP3008J", 1, 2, 3, "8:00", "9:35", "Distributed Systems",
-                "Aiden Murphy", "4-214", "1-15"));
+                "Aiden Murphy", "4-214", "1-15", "COMP3008J Final Exam", "2023-12-21", "Location: TB4-302", "Case Study", "2023-12-01", "Go to CS Moodle for more details."));
         courseModels.add(new CourseModel(5, "COMP3008J", 3, 4, 3, "9:55", "11:30", "Distributed Systems",
-                "Aiden Murphy", "4-102", "1-15"));
+                "Aiden Murphy", "4-102", "1-15", "COMP3008J Final Exam", "2023-12-21", "Location: TB4-302", "Case Study", "2023-12-01", "Go to CS Moodle for more details."));
 
         courseModels.add(new CourseModel(6, "COMP3033J", 1, 2, 4, "8:00", "9:35", "Computer Graphics",
-                "Mohamed Saadeldin", "4-614", "1-15"));
+                "Mohamed Saadeldin", "4-614", "1-15", "COMP3033J Final Exam", "2023-12-27", "Location: TB4-502", "Project 2", "2023-12-31", "Go to CS Moodle for more details."));
         courseModels.add(new CourseModel(7, "COMP3011", 3, 4, 4, "9:55", "11:30", "Mobile Computing",
-                "Mohamed Saadeldin", "4-614", "1-15"));
+                "Mohamed Saadeldin", "4-614", "1-15", "", "", "", "Final Submission", "2023-12-21", "Go to CS Moodle for more details."));
         courseModels.add(new CourseModel(8, "COMP3019J", 5, 6, 4, "13:30", "15:05", "Web App Dev",
-                "Aiden Murphy", "4-214", "1-15"));
+                "Aiden Murphy", "4-214", "1-15", "", "", "", "Project Milestone 2", "2023-12-10", "Go to CS Moodle for more details."));
 
         courseModels.add(new CourseModel(9, "COMP3013J", 1, 2, 5, "8:00", "9:35", "Object-oriented Design",
-                "Sean Russell", "3-516", "1-15"));
+                "Sean Russell", "3-516", "1-15", "COMP3013J Final Exam", "2023-12-19", "Location: TB4-102", "Assignment Part 4", "2023-12-15", "Go to CS Moodle for more details. Note that we should submit a docker image."));
         courseModels.add(new CourseModel(10, "COMP3013J", 3, 4, 5, "9:55", "11:30", "Object-oriented Design",
-                "Sean Russell", "3-516", "1-15"));
+                "Sean Russell", "3-516", "1-15", "COMP3013J Final Exam", "2023-12-19", "Location: TB4-102", "Assignment Part 4", "2023-12-15", "Go to CS Moodle for more details. Note that we should submit a docker image."));
 
     }
 

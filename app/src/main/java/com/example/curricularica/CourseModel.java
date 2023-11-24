@@ -15,9 +15,12 @@ public class CourseModel implements Serializable {
     private String instructor = "";
     private String classroom = "";
     private String weekRange = "";
-    private ArrayList<String> deadlineDate = new ArrayList<>();
-    private ArrayList<String> deadlineTitle = new ArrayList<>();
-    private ArrayList<String> deadlineContent = new ArrayList<>();
+    private String examTitle = "";
+    private String examDate = "";
+    private String examContent = "";
+    private String assignmentTitle = "";
+    private String assignmentDate = "";
+    private String assignmentContent = "";
 
 
     @Override
@@ -34,9 +37,12 @@ public class CourseModel implements Serializable {
                 ", instructor='" + instructor + '\'' +
                 ", classroom='" + classroom + '\'' +
                 ", weekRange='" + weekRange + '\'' +
-                ", deadlineDate=" + deadlineDate +
-                ", deadlineTitle=" + deadlineTitle +
-                ", deadlineContent=" + deadlineContent +
+                ", examTitle='" + examTitle + '\'' +
+                ", examDate='" + examDate + '\'' +
+                ", examContent='" + examContent + '\'' +
+                ", assignmentTitle='" + assignmentTitle + '\'' +
+                ", assignmentDate='" + assignmentDate + '\'' +
+                ", assignmentContent='" + assignmentContent + '\'' +
                 '}';
     }
 
@@ -83,16 +89,29 @@ public class CourseModel implements Serializable {
     public String getWeekRange() {
         return weekRange;
     }
-    public ArrayList<String> getDeadlineDate() {
-        return deadlineDate;
+
+    public String getExamTitle() {
+        return examTitle;
     }
 
-    public ArrayList<String> getDeadlineTitle() {
-        return deadlineTitle;
+    public String getExamDate() {
+        return examDate;
     }
 
-    public ArrayList<String> getDeadlineContent() {
-        return deadlineContent;
+    public String getExamContent() {
+        return examContent;
+    }
+
+    public String getAssignmentTitle() {
+        return assignmentTitle;
+    }
+
+    public String getAssignmentDate() {
+        return assignmentDate;
+    }
+
+    public String getAssignmentContent() {
+        return assignmentContent;
     }
 
     public void setId(int id) {
@@ -137,16 +156,29 @@ public class CourseModel implements Serializable {
     public void setWeekRange(String weekRange) {
         this.weekRange = weekRange;
     }
-    public void setDeadlineDate(String date) {
-        this.deadlineDate.add(date);
+
+    public void setExamTitle(String examTitle) {
+        this.examTitle = examTitle;
     }
 
-    public void setDeadlineTitle(String title) {
-        this.deadlineTitle.add(title);
+    public void setExamDate(String examDate) {
+        this.examDate = examDate;
     }
 
-    public void setDeadlineContent(String content) {
-        this.deadlineContent.add(content);
+    public void setExamContent(String examContent) {
+        this.examContent = examContent;
+    }
+
+    public void setAssignmentTitle(String assignmentTitle) {
+        this.assignmentTitle = assignmentTitle;
+    }
+
+    public void setAssignmentDate(String assignmentDate) {
+        this.assignmentDate = assignmentDate;
+    }
+
+    public void setAssignmentContent(String assignmentContent) {
+        this.assignmentContent = assignmentContent;
     }
 
     public CourseModel() {
@@ -155,7 +187,9 @@ public class CourseModel implements Serializable {
 
     public CourseModel(int id, String courseCode, int startTimePlot, int endTimePlot, int weekday,
                        String startTime, String endTime, String name, String teacher,
-                       String classroom, String weekRange) {
+                       String classroom, String weekRange, String examTitle, String examDate,
+                       String examContent, String assignmentTitle, String assignmentDate,
+                       String assignmentContent) {
         super();
         this.id = id;
         this.courseCode = courseCode;
@@ -168,6 +202,12 @@ public class CourseModel implements Serializable {
         this.instructor = teacher;
         this.classroom = classroom;
         this.weekRange = weekRange;
+        this.examTitle = examTitle;
+        this.examDate = examDate;
+        this.examContent = examContent;
+        this.assignmentTitle = assignmentTitle;
+        this.assignmentDate = assignmentDate;
+        this.assignmentContent = assignmentContent;
     }
 
 }
