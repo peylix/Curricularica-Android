@@ -22,13 +22,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CoursesListActivity">
+        <activity
+            android:name=".CoursesListActivity"
+            android:label="Course Inventory"
+            android:exported="true">
         </activity>
-        <activity android:name=".CourseDetailsActivity">
+        <activity
+            android:name=".CourseDetailsActivity"
+            android:label="Course Details"
+            android:exported="true">
         </activity>
-        <activity android:name=".DeadlinesActivity">
+        <activity
+            android:name=".DeadlinesActivity"
+            android:label="Deadlines"
+            android:exported="true">
         </activity>
-        <activity android:name=".AboutActivity">
+        <activity
+            android:name=".AboutActivity"
+            android:label="About"
+            android:exported="true">
         </activity>
     </application>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
