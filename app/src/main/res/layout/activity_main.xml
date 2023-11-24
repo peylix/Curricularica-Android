@@ -67,12 +67,13 @@
 <!--            android:textSize="18sp" />-->
 <!--    </LinearLayout>-->
 
-        <ScrollView
-        android:id="@+id/main_scrollview"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:fillViewport="false"
-        >
+    <ScrollView
+    android:id="@+id/main_scrollview"
+    android:layout_width="fill_parent"
+    android:layout_height="0dp"
+        android:layout_weight="1"
+    android:fillViewport="false"
+    >
 
         <com.example.curricularica.TimetableView
             android:id="@+id/main_timetable_ly"
@@ -82,6 +83,13 @@
         </com.example.curricularica.TimetableView>
 
     </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ic_light_blue"
+        app:menu="@menu/bottom_navigation_menu" />
 
 
 

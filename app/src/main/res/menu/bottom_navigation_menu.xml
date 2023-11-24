@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/timetable"
+        android:icon="@drawable/calendar_view_day"
+        android:title="Timetable" />
+    <item
+        android:id="@+id/deadlines"
+        android:icon="@drawable/event_list"
+        android:title="Deadlines" />
+</menu>

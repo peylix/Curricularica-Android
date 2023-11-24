@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class MainActivity extends AppCompatActivity {
     private TimetableView timeTableView;
     private List<CourseModel> courseModels;
@@ -42,6 +44,21 @@ public class MainActivity extends AppCompatActivity {
 //            startActivity(intent);
 //        });
 
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            if (item.getItemId() == R.id.timetable) {
+                Intent timetableIntent = new Intent(this, MainActivity.class);
+                startActivity(timetableIntent);
+                return true;
+            } else if (item.getItemId() == R.id.deadlines) {
+                Intent deadlinesIntent = new Intent(this, DeadlinesActivity.class);
+                startActivity(deadlinesIntent);
+                return true;
+            }
+            return true;
+        });
+
     }
 
     @Override
@@ -59,14 +76,16 @@ public class MainActivity extends AppCompatActivity {
             coursesIntent.putExtra("TIMETABLE_LIST", (Serializable) courseModels);
             startActivity(coursesIntent);
             return true;
-        } else if (id == R.id.menu_to_deadlines) {
-            Intent deadlinesIntent = new Intent(this, DeadlinesActivity.class);
-            startActivity(deadlinesIntent);
+        } else if (id == R.id.menu_about) {
+            Intent aboutIntent = new Intent(this, AboutActivity.class);
+            startActivity(aboutIntent);
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
 
 

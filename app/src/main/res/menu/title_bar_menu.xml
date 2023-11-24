@@ -11,11 +11,10 @@
     <item
         android:id="@+id/menu_show_courses"
         android:title="Courses"
-        app:showAsAction="ifRoom" />
-
+        app:showAsAction="never" />
     <item
-        android:id="@+id/menu_to_deadlines"
-        android:title="Deadlines"
-        app:showAsAction="ifRoom" />
+        android:id="@+id/menu_about"
+        android:title="About"
+        app:showAsAction="never" />
 
 </menu>
