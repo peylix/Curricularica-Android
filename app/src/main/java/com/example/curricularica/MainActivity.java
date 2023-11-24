@@ -73,6 +73,10 @@ public class MainActivity extends AppCompatActivity {
             Intent aboutIntent = new Intent(this, AboutActivity.class);
             startActivity(aboutIntent);
             return true;
+        } else if (id == R.id.menu_settings) {
+            Intent settingsIntent = new Intent(this, SettingsActivity.class);
+            startActivity(settingsIntent);
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -109,11 +113,12 @@ public class MainActivity extends AppCompatActivity {
     private void addList() {
         courseModels.add(new CourseModel(0, "COMP3017J", 3, 4, 1, "9:55", "11:30", "Software Methodology",
                 "Qing Mi", "4-414", "1-16", "COMP3017J Final Exam", "2023-12-25", "Location: TB4-201", "Technical Interview Project", "2023-12-15", "Should submit a docker image."));
+        courseModels.add(new CourseModel(2, "COMP3033J", 3, 4, 2, "9:55", "11:30", "Computer Graphics",
+                "Mohamed Saadeldin", "4-214", "1-15", "COMP3033J Final Exam", "2023-12-25", "Location: TB4-201", "Technical Interview Project", "2023-12-15", "Should submit a docker image."));
         courseModels.add(new CourseModel(1, "COMP3011J", 5, 6, 1, "13:30", "15:05", "Mobile Computing",
                 "Mohamed Saadeldin", "4-414", "1-15", "", "", "", "Final Submission", "2023-12-21", "Go to CS Moodle for more details."));
 
-        courseModels.add(new CourseModel(2, "COMP3033J", 3, 4, 2, "9:55", "11:30", "Computer Graphics",
-                "Mohamed Saadeldin", "4-214", "1-15", "COMP3033J Final Exam", "2023-12-25", "Location: TB4-201", "Technical Interview Project", "2023-12-15", "Should submit a docker image."));
+
         courseModels.add(new CourseModel(3, "COMP3019J", 5, 6, 2, "13:30", "15:05", "Web App Dev",
                 "Aiden Murphy", "3-324", "1-15", "", "", "", "Project Milestone 2", "2023-12-10", "Go to CS Moodle for more details."));
 

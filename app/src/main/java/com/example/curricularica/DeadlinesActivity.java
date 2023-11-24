@@ -2,6 +2,8 @@ package com.example.curricularica;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 import androidx.annotation.Nullable;
@@ -10,6 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class DeadlinesActivity extends AppCompatActivity {
@@ -56,17 +59,35 @@ public class DeadlinesActivity extends AppCompatActivity {
 
         assignmentsAdapter = new AssignmentsAdapter(this, courseList2);
         listView.setAdapter(assignmentsAdapter);
-//        listView.setOnItemClickListener((parent, view, position, id) -> {
-//            // Create an intent to start the CourseDetailActivity
-//            Intent intent1 = new Intent(DeadlinesActivity.this, CourseDetailsActivity.class);
-//
-//            // Pass the selected course details to the CourseDetailActivity
-//            CourseModel selectedCourse = courseList.get(position);
-//            intent1.putExtra("COURSE_DETAILS", selectedCourse);
-//
-//            // Start the new activity
-//            startActivityForResult(intent1, 2);
-//        });
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.title_bar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.menu_show_courses) {
+            Intent coursesIntent = new Intent(this, MainActivity.class);
+            startActivity(coursesIntent);
+            return true;
+        } else if (id == R.id.menu_about) {
+            Intent aboutIntent = new Intent(this, AboutActivity.class);
+            startActivity(aboutIntent);
+            return true;
+        } else if (id == R.id.menu_settings) {
+            Intent settingsIntent = new Intent(this, SettingsActivity.class);
+            startActivity(settingsIntent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
 }

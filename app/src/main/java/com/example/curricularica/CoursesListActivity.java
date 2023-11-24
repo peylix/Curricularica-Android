@@ -37,7 +37,5 @@ public class CoursesListActivity extends Activity {
             startActivityForResult(intent1, 2);
         });
 
-
-
     }
 }
