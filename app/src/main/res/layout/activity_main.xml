@@ -2,60 +2,70 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/white"
-    android:orientation="vertical" >
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+    android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+    </androidx.appcompat.widget.Toolbar>
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:gravity="center">-->
 
 
-        <Button
-            android:id="@+id/button_show_courses"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_margin="16dp"
-            android:background="@drawable/button_background"
-            android:clickable="true"
-            android:elevation="4dp"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackground"
-            android:outlineProvider="bounds"
-            android:paddingLeft="24dp"
-            android:paddingTop="12dp"
-            android:paddingRight="24dp"
-            android:paddingBottom="12dp"
-            android:stateListAnimator="@null"
-            android:text="Show Courses"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp" />
+<!--        <Button-->
+<!--            android:id="@+id/button_show_courses"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="start"-->
+<!--            android:layout_margin="16dp"-->
+<!--            android:background="@drawable/button_background"-->
+<!--            android:clickable="true"-->
+<!--            android:elevation="4dp"-->
+<!--            android:focusable="true"-->
+<!--            android:foreground="?attr/selectableItemBackground"-->
+<!--            android:outlineProvider="bounds"-->
+<!--            android:paddingLeft="24dp"-->
+<!--            android:paddingTop="12dp"-->
+<!--            android:paddingRight="24dp"-->
+<!--            android:paddingBottom="12dp"-->
+<!--            android:stateListAnimator="@null"-->
+<!--            android:text="Show Courses"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="#FFFFFF"-->
+<!--            android:textSize="18sp" />-->
 
-        <Button
-            android:id="@+id/button_to_deadlines"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_margin="16dp"
-            android:background="@drawable/button_background_2"
-            android:clickable="true"
-            android:elevation="4dp"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackground"
-            android:outlineProvider="bounds"
-            android:paddingLeft="24dp"
-            android:paddingTop="12dp"
-            android:paddingRight="24dp"
-            android:paddingBottom="12dp"
-            android:stateListAnimator="@null"
-            android:text="Deadlines"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp" />
-    </LinearLayout>
-
+<!--        <Button-->
+<!--            android:id="@+id/button_to_deadlines"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="end"-->
+<!--            android:layout_margin="16dp"-->
+<!--            android:background="@drawable/button_background_2"-->
+<!--            android:clickable="true"-->
+<!--            android:elevation="4dp"-->
+<!--            android:focusable="true"-->
+<!--            android:foreground="?attr/selectableItemBackground"-->
+<!--            android:outlineProvider="bounds"-->
+<!--            android:paddingLeft="24dp"-->
+<!--            android:paddingTop="12dp"-->
+<!--            android:paddingRight="24dp"-->
+<!--            android:paddingBottom="12dp"-->
+<!--            android:stateListAnimator="@null"-->
+<!--            android:text="Deadlines"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="#FFFFFF"-->
+<!--            android:textSize="18sp" />-->
+<!--    </LinearLayout>-->
 
         <ScrollView
         android:id="@+id/main_scrollview"

@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- "Mark Favorite", must appear as action button if possible. -->
+    <item
+        android:id="@+id/action_favorite"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/app_name"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_show_courses"
+        android:title="Courses"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_to_deadlines"
+        android:title="Deadlines"
+        app:showAsAction="ifRoom" />
+
+</menu>

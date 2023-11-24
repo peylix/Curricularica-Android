@@ -3,12 +3,18 @@ package com.example.curricularica;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
-public class MainActivity extends Activity {
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+public class MainActivity extends AppCompatActivity {
     private TimetableView timeTableView;
     private List<CourseModel> courseModels;
 
@@ -16,24 +22,53 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+
         courseModels = new ArrayList<>();
         timeTableView = findViewById(R.id.main_timetable_ly);
         addList();
         timeTableView.setCourse(courseModels);
 
-        findViewById(R.id.button_show_courses).setOnClickListener(v -> {
-            Intent intent = new Intent(this, CoursesListActivity.class);
-            intent.putExtra("TIMETABLE_LIST", (Serializable) courseModels);
-            startActivity(intent);
-
-        });
-
-        findViewById(R.id.button_to_deadlines).setOnClickListener(v -> {
-            Intent intent = new Intent(this, DeadlinesActivity.class);
-            startActivity(intent);
-        });
+//        findViewById(R.id.button_show_courses).setOnClickListener(v -> {
+//            Intent intent = new Intent(this, CoursesListActivity.class);
+//            intent.putExtra("TIMETABLE_LIST", (Serializable) courseModels);
+//            startActivity(intent);
+//
+//        });
+//
+//        findViewById(R.id.button_to_deadlines).setOnClickListener(v -> {
+//            Intent intent = new Intent(this, DeadlinesActivity.class);
+//            startActivity(intent);
+//        });
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.title_bar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.menu_show_courses) {
+            Intent coursesIntent = new Intent(this, CoursesListActivity.class);
+            coursesIntent.putExtra("TIMETABLE_LIST", (Serializable) courseModels);
+            startActivity(coursesIntent);
+            return true;
+        } else if (id == R.id.menu_to_deadlines) {
+            Intent deadlinesIntent = new Intent(this, DeadlinesActivity.class);
+            startActivity(deadlinesIntent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
