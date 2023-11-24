@@ -32,20 +32,10 @@ public class MainActivity extends AppCompatActivity {
         addList();
         timeTableView.setCourse(courseModels);
 
-//        findViewById(R.id.button_show_courses).setOnClickListener(v -> {
-//            Intent intent = new Intent(this, CoursesListActivity.class);
-//            intent.putExtra("TIMETABLE_LIST", (Serializable) courseModels);
-//            startActivity(intent);
-//
-//        });
-//
-//        findViewById(R.id.button_to_deadlines).setOnClickListener(v -> {
-//            Intent intent = new Intent(this, DeadlinesActivity.class);
-//            startActivity(intent);
-//        });
-
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.timetable);
+
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             if (item.getItemId() == R.id.timetable) {
                 Intent timetableIntent = new Intent(this, MainActivity.class);

@@ -18,6 +18,7 @@ public class DeadlinesActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.deadlines);
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             if (item.getItemId() == R.id.timetable) {
                 Intent timetableIntent = new Intent(this, MainActivity.class);
