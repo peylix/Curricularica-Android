@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:src="@drawable/icon"
+        android:layout_gravity="center"
+    android:layout_centerHorizontal="true"
+
+        android:padding="12dp"/>
+
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Curricularica"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+
+        android:layout_centerHorizontal="true"
+        android:padding="12dp"/>
+
+    <TextView
+        android:id="@+id/tvAppVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Beta Version"
+        android:textSize="16sp"
+        android:layout_gravity="center"
+
+        android:textStyle="bold"
+
+        android:layout_below="@id/tvAppName"
+        android:layout_centerHorizontal="true"
+        android:padding="12dp"/>
+
+    <TextView
+        android:id="@+id/tvAuthorship"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This app is designed and implemented by Sichen Li (UCD ID: 21207464) for the project of COMP3011J Mobile Computing."
+        android:layout_below="@id/tvAppVersion"
+        android:layout_centerHorizontal="true"
+        android:padding="12dp"/>
+
+    <TextView
+        android:id="@+id/tvAppDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This project aims to develop an Android app called Curricularica to help students manage those courses and deadlines."
+        android:layout_below="@id/tvAuthorship"
+        android:layout_centerHorizontal="true"
+        android:padding="12dp"/>
+
+    <TextView
+        android:id="@+id/tvAppDescription2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="With Curricularica, users can create timetables for their courses and set deadlines for exams and assignments."
+        android:layout_below="@id/tvAppDescription"
+        android:layout_centerHorizontal="true"
+        android:padding="12dp"/>
+
+
+    <Button
+        android:id="@+id/button_back_to_timetable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_margin="12dp"
+        android:background="@drawable/button_background"
+        android:clickable="true"
+        android:elevation="4dp"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:outlineProvider="bounds"
+        android:paddingLeft="24dp"
+        android:paddingTop="12dp"
+        android:paddingRight="24dp"
+        android:paddingBottom="12dp"
+        android:stateListAnimator="@null"
+        android:text="Back"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:padding="12dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>
