@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/course_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Course Name"/>
+
+        <EditText
+            android:id="@+id/course_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Course Code"/>
+
+        <EditText
+            android:id="@+id/instructor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Instructor Name"/>
+
+        <EditText
+            android:id="@+id/start_time_plot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Start Time Plot"/>
+
+        <EditText
+            android:id="@+id/end_time_plot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="End Time Plot"/>
+
+        <EditText
+            android:id="@+id/weekday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Weekday"/>
+
+        <EditText
+            android:id="@+id/start_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Start Time (eg. 8:00)"/>
+
+        <EditText
+            android:id="@+id/end_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="End Time (eg. 9:55)"/>
+
+        <EditText
+            android:id="@+id/classroom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Classroom"/>
+
+        <EditText
+            android:id="@+id/week_range"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Week Range (eg. 1-16)"/>
+
+        <EditText
+            android:id="@+id/exam_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Exam Title"/>
+
+        <EditText
+            android:id="@+id/exam_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Exam Content"/>
+
+        <EditText
+            android:id="@+id/exam_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Exam Date (eg. 2023-12-10)"/>
+
+        <EditText
+            android:id="@+id/assignment_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Assignment Title"/>
+
+        <EditText
+            android:id="@+id/assignment_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Assignment Content"/>
+
+        <EditText
+            android:id="@+id/assignment_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Assignment Date (eg. 2023-12-10)"/>
+
+    </LinearLayout>
+</ScrollView>

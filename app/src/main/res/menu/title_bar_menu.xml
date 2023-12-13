@@ -4,12 +4,17 @@
     <item
         android:id="@+id/action_favorite"
         android:icon="@mipmap/ic_launcher"
-        android:title="@string/app_name"
+        android:title="Add Course"
         app:showAsAction="ifRoom"/>
 
+<!--    <item-->
+<!--        android:id="@+id/menu_show_courses"-->
+<!--        android:title="Courses"-->
+<!--        app:showAsAction="never" />-->
+
     <item
-        android:id="@+id/menu_show_courses"
-        android:title="Courses"
+        android:id="@+id/menu_removing_courses"
+        android:title="Remove Courses"
         app:showAsAction="never" />
 
     <item

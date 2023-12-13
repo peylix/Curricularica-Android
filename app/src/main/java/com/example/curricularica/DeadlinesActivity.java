@@ -1,6 +1,7 @@
 package com.example.curricularica;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,8 +12,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.Serializable;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DeadlinesActivity extends AppCompatActivity {
@@ -46,16 +51,20 @@ public class DeadlinesActivity extends AppCompatActivity {
 
         listView = findViewById(R.id.list_exams);
 
-        Intent examsIntent = getIntent();
-        courseList = (List<CourseModel>) examsIntent.getSerializableExtra("TIMETABLE_LIST");
+//        Intent examsIntent = getIntent();
+//        courseList = (List<CourseModel>) examsIntent.getSerializableExtra("TIMETABLE_LIST");
+
+        courseList = loadCourses();
 
         examAdapter = new ExamsAdapter(this, courseList);
         listView.setAdapter(examAdapter);
 
         listView = findViewById(R.id.list_assignments);
 
-        Intent assignmentsIntent = getIntent();
-        courseList2 = (List<CourseModel>) assignmentsIntent.getSerializableExtra("TIMETABLE_LIST_2");
+//        Intent assignmentsIntent = getIntent();
+//        courseList2 = (List<CourseModel>) assignmentsIntent.getSerializableExtra("TIMETABLE_LIST_2");
+
+        courseList2 = loadCourses();
 
         assignmentsAdapter = new AssignmentsAdapter(this, courseList2);
         listView.setAdapter(assignmentsAdapter);
@@ -72,11 +81,12 @@ public class DeadlinesActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.menu_show_courses) {
-            Intent coursesIntent = new Intent(this, MainActivity.class);
-            startActivity(coursesIntent);
-            return true;
-        } else if (id == R.id.menu_about) {
+//        if (id == R.id.menu_show_courses) {
+//            Intent coursesIntent = new Intent(this, MainActivity.class);
+//            startActivity(coursesIntent);
+//            return true;
+//        } else
+        if (id == R.id.menu_about) {
             Intent aboutIntent = new Intent(this, AboutActivity.class);
             startActivity(aboutIntent);
             return true;
@@ -87,6 +97,22 @@ public class DeadlinesActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private List<CourseModel> loadCourses() {
+        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        String json = sharedPreferences.getString("courses", null);
+
+        if (json != null) {
+            Gson gson = new Gson();
+            Type type = new TypeToken<List<CourseModel>>() {}.getType();
+            return gson.fromJson(json, type);
+        } else {
+//            courseModels = new ArrayList<>();
+//            addList();
+//            return courseModels;
+            return new ArrayList<>();
+        }
     }
 
 
