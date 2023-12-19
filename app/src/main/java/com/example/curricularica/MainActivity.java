@@ -70,10 +70,14 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             } else if (item.getItemId() == R.id.deadlines) {
                 Intent deadlinesIntent = new Intent(this, DeadlinesActivity.class);
-                deadlinesIntent.putExtra("TIMETABLE_LIST", (Serializable) courseModels);
-                deadlinesIntent.putExtra("TIMETABLE_LIST_2", (Serializable) courseModels);
+//                deadlinesIntent.putExtra("TIMETABLE_LIST", (Serializable) courseModels);
+//                deadlinesIntent.putExtra("TIMETABLE_LIST_2", (Serializable) courseModels);
 
                 startActivity(deadlinesIntent);
+                return true;
+            } else if (item.getItemId() == R.id.copilot) {
+                Intent copilotIntent = new Intent(this, ChatActivity.class);
+                startActivity(copilotIntent);
                 return true;
             }
             return true;

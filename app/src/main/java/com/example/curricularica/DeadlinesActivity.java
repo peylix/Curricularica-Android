@@ -45,6 +45,10 @@ public class DeadlinesActivity extends AppCompatActivity {
                 Intent deadlinesIntent = new Intent(this, DeadlinesActivity.class);
                 startActivity(deadlinesIntent);
                 return true;
+            } else if (item.getItemId() == R.id.copilot) {
+                Intent copilotIntent = new Intent(this, ChatActivity.class);
+                startActivity(copilotIntent);
+                return true;
             }
             return true;
         });

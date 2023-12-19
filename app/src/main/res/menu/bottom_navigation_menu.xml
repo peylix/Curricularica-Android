@@ -8,4 +8,8 @@
         android:id="@+id/deadlines"
         android:icon="@drawable/event_list"
         android:title="Deadlines" />
+    <item
+        android:id="@+id/copilot"
+        android:icon="@drawable/baseline_chat_24"
+        android:title="Copilot" />
 </menu>

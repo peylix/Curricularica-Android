@@ -295,10 +295,24 @@
                   <entry key="vectorAssetStep">
                     <value>
                       <PersistentState>
+                        <option name="children">
+                          <map>
+                            <entry key="clipartAsset">
+                              <value>
+                                <PersistentState>
+                                  <option name="values">
+                                    <map>
+                                      <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialicons/chat/baseline_chat_24.xml" />
+                                    </map>
+                                  </option>
+                                </PersistentState>
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
                         <option name="values">
                           <map>
-                            <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="calendar_view_day" />
+                            <entry key="outputName" value="baseline_chat_24" />
                             <entry key="sourceFile" value="$PROJECT_DIR$/app/src/main/res/icons/calendar_view_day_FILL0_wght400_GRAD0_opsz24.svg" />
                           </map>
                         </option>
