@@ -47,6 +47,17 @@
             android:label="Settings"
             android:exported="true">
         </activity>
+        <receiver android:name=".TimetableWidgetProvider"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
+        <service android:name=".WidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"
+            android:exported="true"/>
     </application>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>

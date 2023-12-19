@@ -2,12 +2,17 @@ package com.example.curricularica;
 
 import java.io.Serializable;
 import java.lang.reflect.Type;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -295,7 +300,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private List<CourseModel> loadCourses() {
+    public List<CourseModel> loadCourses() {
         SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
         String json = sharedPreferences.getString("courses", null);
 
@@ -310,6 +315,58 @@ public class MainActivity extends AppCompatActivity {
             return new ArrayList<>();
         }
     }
+
+    public static List<CourseModel> loadCoursesStatic(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        String json = sharedPreferences.getString("courses", null);
+        List<CourseModel> filteredCourses = new ArrayList<>();
+
+        if (json != null) {
+            Gson gson = new Gson();
+            Type type = new TypeToken<List<CourseModel>>() {}.getType();
+            List<CourseModel> allCourses = gson.fromJson(json, type);
+
+            CourseModel closestCourse = getClosestCourse(allCourses);
+            if (closestCourse != null) {
+                filteredCourses.add(closestCourse);
+            }
+        }
+
+        return filteredCourses;
+    }
+
+    private static CourseModel getClosestCourse(List<CourseModel> courses) {
+        CourseModel closestCourse = null;
+        long minTimeDiff = Long.MAX_VALUE;
+        long currentTime = System.currentTimeMillis();
+
+        for (CourseModel course : courses) {
+            long courseTime = parseCourseTime(course.getStartTime());
+            long timeDiff = Math.abs(courseTime - currentTime);
+
+            if (timeDiff < minTimeDiff) {
+                minTimeDiff = timeDiff;
+                closestCourse = course;
+            }
+        }
+
+        return closestCourse;
+    }
+
+    private static long parseCourseTime(String timeString) {
+        // Parse the course start time string into a timestamp
+        // This will depend on the format of your start time string
+        // Example: assuming format "HH:mm"
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
+            Date date = sdf.parse(timeString);
+            return date != null ? date.getTime() : 0;
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
 
     private boolean isSharedPreferencesEmpty() {
         SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
