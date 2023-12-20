@@ -100,10 +100,10 @@ public class ChatActivity extends AppCompatActivity {
                             .getString("text").trim();
 
                     // Display the response in the chat
-                    receiveMessage("Chatbot: " + responseText);
+                    receiveMessage("Curricularica Copilot: " + responseText);
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    receiveMessage("Chatbot: Error parsing response.");
+                    receiveMessage("Curricularica Copilot: Error parsing response.");
                 }
             }
 

@@ -31,13 +31,12 @@ public class ChatBotApiClient {
         JSONObject requestBody = new JSONObject();
         try {
             requestBody.put("prompt", message);
-            requestBody.put("max_tokens", 50); // Adjust as needed
+            requestBody.put("max_tokens", 50);
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
         // Create request
-        // Handle the successful response here
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, API_URL, requestBody,
                 callback::onResponse,
                 callback::onError) {

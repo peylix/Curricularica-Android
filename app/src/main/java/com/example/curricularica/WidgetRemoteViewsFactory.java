@@ -38,8 +38,7 @@ class WidgetRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory 
         return courses != null ? courses.size() : 0;
     }
 
-    // Implement other required methods like getViewAt, getCount, etc.
-    // Example for getViewAt:
+
     @Override
     public RemoteViews getViewAt(int position) {
         RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.widget_list_item);
@@ -57,8 +56,6 @@ class WidgetRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory 
         rv.setTextViewText(R.id.widget_course_name, course.getName());
 //        rv.setTextViewText(R.id.widget_start_time, course.getStartTime());
 //        rv.setTextViewText(R.id.widget_end_time, course.getEndTime());
-        // Set other data as needed
-
         return rv;
     }
 
@@ -82,5 +79,4 @@ class WidgetRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory 
         return false;
     }
 
-    // ... other required methods ...
 }

@@ -15,7 +15,7 @@
         android:id="@+id/widget_next_course"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mobile Computing"
+        android:text="Computer Graphics"
 
         android:textSize="20sp"
         android:textColor="@color/ic_blue_pr"/>
