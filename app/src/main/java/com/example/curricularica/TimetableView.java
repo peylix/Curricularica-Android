@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
@@ -257,7 +258,16 @@ public class TimetableView extends LinearLayout {
 
         timetableView.setBackgroundDrawable(getContext().getResources()
                 .getDrawable(colors[getColorNum(model.getName())]));
-        timetableView.setOnClickListener(v -> Toast.makeText(getContext(), model.getName() + "@" + model.getClassroom(), Toast.LENGTH_LONG).show());
+
+        // clicking a timetableView unit
+        timetableView.setOnClickListener(v -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            builder.setTitle(model.getCourseCode() + "\n" + model.getName());
+            builder.setMessage("Room: " + model.getClassroom() + "\nFrom: " + model.getStartTime() + "\nTo: " + model.getEndTime() + "\nInstructor: " + model.getInstructor() + "\nWeek Range: " + model.getWeekRange());
+            builder.setPositiveButton("OK", (dialog, which) -> dialog.dismiss());
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        });
         return timetableView;
     }
 

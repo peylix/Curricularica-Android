@@ -52,7 +52,7 @@
         android:id="@+id/tvAppVersion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Beta Version"
+        android:text="Final Submission Version"
         android:textSize="16sp"
         android:layout_gravity="center"
 
