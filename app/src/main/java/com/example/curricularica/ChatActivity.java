@@ -2,6 +2,7 @@ package com.example.curricularica;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -46,6 +47,8 @@ public class ChatActivity extends AppCompatActivity {
         chatMessages = new ArrayList<>();
         chatAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, chatMessages);
         chatListView.setAdapter(chatAdapter);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("APIKeyData", MODE_PRIVATE);
 
         // Initialize ChatGPTApiClient
         chatBotApiClient = new ChatBotApiClient(this);

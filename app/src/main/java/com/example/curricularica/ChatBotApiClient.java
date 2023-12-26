@@ -36,14 +36,14 @@ public class ChatBotApiClient {
             // Add the user's message as an object in the messages array
             JSONObject userMessage = new JSONObject();
             userMessage.put("role", "user");
-            userMessage.put("content", message);
+            userMessage.put("content", message + "Please generate your response in only one sentence.");
             messages.put(userMessage);
 
             // Put the messages array into the requestBody
             requestBody.put("messages", messages);
             requestBody.put("model", "gpt-3.5-turbo");
             // Adjust max_tokens if needed
-            requestBody.put("max_tokens", 50);
+            requestBody.put("max_tokens", 60);
         } catch (JSONException e) {
             e.printStackTrace();
         }
