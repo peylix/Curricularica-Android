@@ -8,6 +8,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -17,7 +18,7 @@ import java.util.Map;
 
 public class ChatBotApiClient {
 
-    private static final String API_URL = "https://api.openai.com/v1/engines/gpt-3.5-turbo/completions";
+    private static final String API_URL = "https://api.openai.com/v1/chat/completions";
     private static final String API_KEY = "";
     private RequestQueue requestQueue;
 
@@ -30,7 +31,18 @@ public class ChatBotApiClient {
         // Construct the request body
         JSONObject requestBody = new JSONObject();
         try {
-            requestBody.put("prompt", message);
+            // Create a messages array
+            JSONArray messages = new JSONArray();
+            // Add the user's message as an object in the messages array
+            JSONObject userMessage = new JSONObject();
+            userMessage.put("role", "user");
+            userMessage.put("content", message);
+            messages.put(userMessage);
+
+            // Put the messages array into the requestBody
+            requestBody.put("messages", messages);
+            requestBody.put("model", "gpt-3.5-turbo");
+            // Adjust max_tokens if needed
             requestBody.put("max_tokens", 50);
         } catch (JSONException e) {
             e.printStackTrace();

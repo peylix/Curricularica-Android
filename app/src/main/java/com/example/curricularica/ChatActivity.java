@@ -3,6 +3,7 @@ package com.example.curricularica;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +16,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.android.volley.VolleyError;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -94,18 +96,25 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    // Extracting the response text
-                    String responseText = response.getJSONArray("choices")
-                            .getJSONObject(0)
-                            .getString("text").trim();
+                    // Extracting the choices array
+                    JSONArray choices = response.getJSONArray("choices");
+                    if (choices.length() > 0) {
+                        // Get the first choice object
+                        JSONObject firstChoice = choices.getJSONObject(0);
+                        // Extracting the message object
+                        JSONObject messageObject = firstChoice.getJSONObject("message");
+                        // Extracting the content text
+                        String responseText = messageObject.getString("content").trim();
 
-                    // Display the response in the chat
-                    receiveMessage("Curricularica Copilot: " + responseText);
+                        // Display the response in the chat
+                        receiveMessage("Curricularica Copilot: " + responseText);
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                     receiveMessage("Curricularica Copilot: Error parsing response.");
                 }
             }
+
 
             @Override
             public void onError(VolleyError error) {
