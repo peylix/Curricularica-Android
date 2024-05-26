@@ -85,11 +85,6 @@ public class DeadlinesActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-//        if (id == R.id.menu_show_courses) {
-//            Intent coursesIntent = new Intent(this, MainActivity.class);
-//            startActivity(coursesIntent);
-//            return true;
-//        } else
         if (id == R.id.menu_about) {
             Intent aboutIntent = new Intent(this, AboutActivity.class);
             startActivity(aboutIntent);
@@ -112,9 +107,6 @@ public class DeadlinesActivity extends AppCompatActivity {
             Type type = new TypeToken<List<CourseModel>>() {}.getType();
             return gson.fromJson(json, type);
         } else {
-//            courseModels = new ArrayList<>();
-//            addList();
-//            return courseModels;
             return new ArrayList<>();
         }
     }

@@ -1,7 +1,6 @@
 package com.example.curricularica;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class CourseModel implements Serializable {
     private int id;

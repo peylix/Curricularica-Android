@@ -54,8 +54,7 @@ class WidgetRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory 
         Log.d("WidgetRemoteViewsFactory", "Course at position " + position + ": " + course.toString());
 
         rv.setTextViewText(R.id.widget_course_name, course.getName());
-//        rv.setTextViewText(R.id.widget_start_time, course.getStartTime());
-//        rv.setTextViewText(R.id.widget_end_time, course.getEndTime());
+
         return rv;
     }
 

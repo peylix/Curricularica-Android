@@ -1,18 +1,13 @@
 package com.example.curricularica;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.EditText;
-import android.widget.ListView;
 
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import java.util.List;
 
 public class SettingsActivity extends AppCompatActivity {
     EditText apiKey;
@@ -30,17 +25,10 @@ public class SettingsActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("APIKeyData", MODE_PRIVATE);
         apiKey.setText(sharedPreferences.getString("apiKey", ""));
 
-//        findViewById(R.id.button_import).setOnClickListener(v -> {
-//
-//        });
 
         findViewById(R.id.button_create).setOnClickListener(v -> {
 
         });
-
-//        findViewById(R.id.button_switch).setOnClickListener(v -> {
-//
-//        });
 
     }
 
